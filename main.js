@@ -1,6 +1,6 @@
 "use strict";
 
-function stringify(form, parent = null) {
+function flatify(form, parent = null) {
     let flat = {};
 
     for (const field in form) {
@@ -8,7 +8,7 @@ function stringify(form, parent = null) {
             flat = Object.assign(
                 {},
                 flat,
-                stringify(
+                flatify(
                     form[field],
                     parent === null
                         ? field
@@ -23,4 +23,4 @@ function stringify(form, parent = null) {
     return flat;
 }
 
-module.exports = stringify;
+module.exports = flatify;
