@@ -1,0 +1,22 @@
+{
+  "name": "objectserializer",
+  "version": "1.0.0",
+  "description": "Convert object to flat object serializable with querystring",
+  "main": "main.js",
+  "scripts": {
+    "test": "eslint main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baptistedonaux/objectserializer.git"
+  },
+  "author": "Baptiste Donaux <baptiste.donaux@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/baptistedonaux/objectserializer/issues"
+  },
+  "homepage": "https://github.com/baptistedonaux/objectserializer#readme",
+  "devDependencies": {
+    "eslint": "^3.16.0"
+  }
+}
