@@ -4,19 +4,16 @@ function flatify(form, parent = null) {
     let flat = {};
 
     for (const field in form) {
+        const key = parent === null ? field : `${parent}[${field}]`;
+
         if (typeof form[field] === "object") {
             flat = Object.assign(
                 {},
                 flat,
-                flatify(
-                    form[field],
-                    parent === null
-                        ? field
-                        : `${parent}[${field}]`
-                )
+                flatify(form[field], key)
             );
         } else {
-            flat[`${parent}[${field}]`] = form[field];
+            flat[key] = form[field];
         }
     }
 

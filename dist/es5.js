@@ -8,10 +8,12 @@ function flatify(form) {
     var flat = {};
 
     for (var field in form) {
+        var key = parent === null ? field : parent + "[" + field + "]";
+
         if (_typeof(form[field]) === "object") {
-            flat = Object.assign({}, flat, flatify(form[field], parent === null ? field : parent + "[" + field + "]"));
+            flat = Object.assign({}, flat, flatify(form[field], key));
         } else {
-            flat[parent + "[" + field + "]"] = form[field];
+            flat[key] = form[field];
         }
     }
 
